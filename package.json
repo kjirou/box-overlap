@@ -27,6 +27,13 @@
     "node": ">=6",
     "npm": ">=3"
   },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "test",
+    "package.json"
+  ],
   "devDependencies": {
     "mocha": "^3.2.0"
   }
