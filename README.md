@@ -1,2 +1,3 @@
 # box-overlap
-Compute the part where the two boxes overlap
+
+Check whether two boxes overlap

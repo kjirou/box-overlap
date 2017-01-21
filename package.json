@@ -1,0 +1,33 @@
+{
+  "name": "box-overlap",
+  "version": "0.0.0",
+  "description": "Check whether two boxes overlap",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjirou/box-overlap.git"
+  },
+  "keywords": [
+    "DOMRect",
+    "box",
+    "rectangle",
+    "overlap",
+    "calculation"
+  ],
+  "author": "kjirou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kjirou/box-overlap/issues"
+  },
+  "homepage": "https://github.com/kjirou/box-overlap#readme",
+  "engines": {
+    "node": ">=6",
+    "npm": ">=3"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
