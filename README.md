@@ -17,6 +17,7 @@ npm install box-overlap
 ```js
 const { areBoxesOverlapping } = require('box-overlap');
 
+// This value can also be expressed as `{ top: 1, left: 0, bottom: 4, right: 2 }`.
 const a = { x: 0, y: 1, width: 2, height: 3 };
 
 //  0 1 2
