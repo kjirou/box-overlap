@@ -1,6 +1,6 @@
 {
   "name": "box-overlap",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Check whether two boxes overlap",
   "main": "index.js",
   "scripts": {
