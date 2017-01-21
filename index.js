@@ -66,13 +66,15 @@ const areBoxesOverlapping = (boxA, boxB) => {
 
   return (
     (
-      a.top <= b.top && a.bottom > b.top ||
-      a.top > b.top && b.bottom > a.top
+      a.top < b.top && a.bottom > b.top ||
+      a.top > b.top && b.bottom > a.top ||
+      a.top === b.top && a.top < a.bottom && b.top < b.bottom  // It means that both `a` and `b` have thickness
     )
     &&
     (
-      a.left <= b.left && a.right > b.left ||
-      a.left > b.left && b.right > a.left
+      a.left < b.left && a.right > b.left ||
+      a.left > b.left && b.right > a.left ||
+      a.left === b.left && a.left < a.right && b.left < b.right
     )
   );
 };

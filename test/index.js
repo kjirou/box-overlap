@@ -154,5 +154,122 @@ describe('box-overlap', () => {
         false
       );
     });
+
+    it('can judge that the dot is within the box', () => {
+      const a = { x: 0, y: 1, width: 2, height: 3 };
+
+      //  1 0 1 2
+      // +-+-+-+-+
+      // | | | | | 0
+      // +-+-+-+-+
+      // | |a|a| | 1
+      // +-+-T-+-+
+      // | |a|a| | 2
+      // +-+-T-+-+
+      // | |a|a| | 3
+      // +-+-+-+-+
+      // | | | | | 4
+      // +-+-+-+-+
+      assert.strictEqual(
+        areBoxesOverlapping(a, { x: 1, y: 2, width: 0, height: 0 }),
+        true
+      );
+      assert.strictEqual(
+        areBoxesOverlapping(a, { x: 1, y: 3, width: 0, height: 0 }),
+        true
+      );
+
+      //  1 0 1 2
+      // +-+-+-+-+
+      // | | | | | 0
+      // +-F-F-F-+
+      // | |a|a| | 1
+      // +-+-+-+-+
+      // | |a|a| | 2
+      // +-+-+-+-+
+      // | |a|a| | 3
+      // +-+-+-+-+
+      // | | | | | 4
+      // +-+-+-+-+
+      assert.strictEqual(
+        areBoxesOverlapping(a, { x: 0, y: 0, width: 0, height: 0 }),
+        false
+      );
+      assert.strictEqual(
+        areBoxesOverlapping(a, { x: 1, y: 0, width: 0, height: 0 }),
+        false
+      );
+      assert.strictEqual(
+        areBoxesOverlapping(a, { x: 2, y: 0, width: 0, height: 0 }),
+        false
+      );
+
+      //  1 0 1 2
+      // +-+-+-+-+
+      // | | | | | 0
+      // +-+-+-+-+
+      // | |a|a| | 1
+      // +-+-+-+-+
+      // | |a|a| | 2
+      // +-+-+-+-+
+      // | |a|a| | 3
+      // +-F-F-F-+
+      // | | | | | 4
+      // +-+-+-+-+
+      assert.strictEqual(
+        areBoxesOverlapping(a, { x: 0, y: 4, width: 0, height: 0 }),
+        false
+      );
+      assert.strictEqual(
+        areBoxesOverlapping(a, { x: 1, y: 4, width: 0, height: 0 }),
+        false
+      );
+      assert.strictEqual(
+        areBoxesOverlapping(a, { x: 2, y: 4, width: 0, height: 0 }),
+        false
+      );
+
+      //  1 0 1 2
+      // +-+-+-+-+
+      // | | | | | 0
+      // +-+-+-+-+
+      // | |a|a| | 1
+      // +-F-+-+-+
+      // | |a|a| | 2
+      // +-F-+-+-+
+      // | |a|a| | 3
+      // +-+-+-+-+
+      // | | | | | 4
+      // +-+-+-+-+
+      assert.strictEqual(
+        areBoxesOverlapping(a, { x: 0, y: 2, width: 0, height: 0 }),
+        false
+      );
+      assert.strictEqual(
+        areBoxesOverlapping(a, { x: 0, y: 3, width: 0, height: 0 }),
+        false
+      );
+
+      //  1 0 1 2
+      // +-+-+-+-+
+      // | | | | | 0
+      // +-+-+-+-+
+      // | |a|a| | 1
+      // +-+-+-F-+
+      // | |a|a| | 2
+      // +-+-+-F-+
+      // | |a|a| | 3
+      // +-+-+-+-+
+      // | | | | | 4
+      // +-+-+-+-+
+      assert.strictEqual(
+        areBoxesOverlapping(a, { x: 2, y: 2, width: 0, height: 0 }),
+        false
+      );
+      assert.strictEqual(
+        areBoxesOverlapping(a, { x: 2, y: 3, width: 0, height: 0 }),
+        false
+      );
+    });
   });
 });
