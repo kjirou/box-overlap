@@ -77,4 +77,5 @@ console.log(areBoxesOverlapping(a, { x: 2, y: 0, width: 1, height: 1 }));  // ->
 
 
 ## Use cases
-- Use for results got in [getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+- For coordinate calculation of 2D
+- For results got in [getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
